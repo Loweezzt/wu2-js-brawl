@@ -8,31 +8,43 @@ function rollDice() {
 
 console.log(rollDice())
 
+const playButton = document.querySelector("#play-button")
 const playerHpElement = document.querySelector("#player-hp")
 const enemyHpElement = document.querySelector("#enemy-hp")
+const combatLogElement = document.querySelector("#combat-log")
+
+function log(msg) {
+    const li = document.createElement("li")
+    li.textContent = msg
+    combatLogElement.appendChild(li)
+    if (combatLogElement.children.length > 10) {
+        combatLogElement.removeChild(combatLogElement.firstChild)
+    }
+}
 
 function gameRound() {
     if (playerHp <= 0) {
-        console.log("Du är död! Spelet är slut.")
+        log("Du är död! Spelet är slut.")
+
     } else if (enemyHp <= 0) {
-        console.log("Fienden är död! Du vinner!")
+        log("Fienden är död! Du vinner!")
     }
-    let playerRoll = rollDice()
-    let enemyRoll = rollDice()
+    const playerRoll = rollDice()
+    const enemyRoll = rollDice()
     if (playerRoll > enemyRoll) {
         const damage = playerRoll - enemyRoll
-        console.log(`Du slår fienden för ${damage}!`)
+        log(`Du slår fienden för ${damage}!`)
         enemyHp -= damage
     } else if (enemyRoll > playerRoll) {
         const damage = enemyRoll - playerRoll
-        console.log(`Nedrans, du blir träffad för ${damage}!`)
+        log(`Nedrans, du blir träffad för ${damage}!`)
         playerHp -= damage
     } else {
-        console.log("Snyggt parerat, inget händer!")
+        log("Snyggt parerat, inget händer!")
     }
+
     playerHpElement.textContent = playerHp
     enemyHpElement.textContent = enemyHp
 }
-const playButton = document.querySelector("#play-button")
 playButton.addEventListener("click", gameRound)
 

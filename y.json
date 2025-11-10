@@ -1,0 +1,99 @@
+[
+  {
+    "id": "intro",
+    "title": "Prolog: Båten genom dimman",
+    "description": "Du spelar som Tristan. Skeppet gungar i Kiris dimma. Framför dig sitter Isolde med varmt te. Ditt uppdrag: skydda henne till varje pris. Men i nattens stillhet hör du ett rop i ditt bröst som inte är ditt eget.",
+    "choices": [
+      { "text": "Närma dig Isolde och fråga varför hennes chakra darrar.", "target": "val1" },
+      { "text": "Ignorera impulsen och meditera, hålla dig kall och lojal.", "target": "val2" },
+      { "text": "Gå ner under däck för att kontrollera mörkret.", "target": "val3" }
+    ]
+  },
+
+  {
+    "id": "val1",
+    "title": "Val 1: Närma dig Isolde",
+    "description": "Du rör försiktigt vid hennes hand. Hon berättar om en oroande dröm och du känner ett förbjudet band växa. ANBU-lojaliteten testas.",
+    "choices": [
+      { "text": "Säg mig mer om drömmen.", "target": "val1A" },
+      { "text": "Tyst. Någon lyssnar.", "target": "val1B" },
+      { "text": "Det var bara en dröm.", "target": "val1C" }
+    ]
+  },
+  {
+    "id": "val1A",
+    "title": "Val 1A: Säg mig mer om drömmen",
+    "description": "Isolde berättar om en symbol i dimman – ANBU:s märke. Hon tror någon manipulerar skeppet. Ni börjar dela hemligheter som kan kosta era liv.",
+    "choices": []
+  },
+  {
+    "id": "val1B",
+    "title": "Val 1B: Tyst. Någon lyssnar.",
+    "description": "Du reser dig snabbt och upptäcker en ANBU från Mist. En förrädare kan finnas ombord. Nu är både du och Isolde i fara.",
+    "choices": []
+  },
+  {
+    "id": "val1C",
+    "title": "Val 1C: Det var bara en dröm",
+    "description": "Du försöker lugna henne, men ett skrik hörs under däck. Blod sipprar upp mellan plankorna — drömmen var en varning.",
+    "choices": []
+  },
+
+  {
+    "id": "val2",
+    "title": "Val 2: Ignorera impulsen och meditera",
+    "description": "Du försöker stänga ute alla känslor. Endast uppdraget finns. Men en röst viskar: 'Du kan inte skydda henne om du inte känner henne.' Dimman blir levande.",
+    "choices": [
+      { "text": "Bryt meditationen och kontrollera däcket.", "target": "val2A" },
+      { "text": "Fördjupa meditationen och följ rösten inom dig.", "target": "val2B" },
+      { "text": "Ignorera allt och håll vakt till gryningen.", "target": "val2C" }
+    ]
+  },
+  {
+    "id": "val2A",
+    "title": "Val 2A: Bryt meditationen och kontrollera däcket",
+    "description": "Skeppet är stilla. Soldaterna sover under genjutsu – och Isolde är borta. Du måste jaga genom illusioner för att hitta henne.",
+    "choices": []
+  },
+  {
+    "id": "val2B",
+    "title": "Val 2B: Fördjupa meditationen och följ rösten",
+    "description": "Du ser en vision av Isolde i stormvågor. En röst säger: 'Kärlek föder förräderi.' Du vaknar med chakraavtryck och kraften Hjärtspegeln.",
+    "choices": []
+  },
+  {
+    "id": "val2C",
+    "title": "Val 2C: Ignorera allt och håll vakt till gryningen",
+    "description": "Du står kvar som en staty. I gryningen inser du: någon har bytt ut en av livvakterna mot en dubbelgångare.",
+    "choices": []
+  },
+
+  {
+    "id": "val3",
+    "title": "Val 3: Gå ner under däck",
+    "description": "Du smyger ner i mörkret. Röster talar på ett främmande språk. På golvet ser du en chakra-cirkel av blod. En röst: 'Hon ska aldrig nå Konoha.'",
+    "choices": [
+      { "text": "Anfall direkt.", "target": "val3A" },
+      { "text": "Lyssna. Avvakta.", "target": "val3B" },
+      { "text": "Avslöja dig och tala med dem.", "target": "val3C" }
+    ]
+  },
+  {
+    "id": "val3A",
+    "title": "Val 3A: Anfall direkt",
+    "description": "Du dödar tre, men en förbannelse aktiveras. Blodet lyser – du dras in i förseglingen och vaknar på en annan plats, i en annan tid.",
+    "choices": []
+  },
+  {
+    "id": "val3B",
+    "title": "Val 3B: Lyssna. Avvakta.",
+    "description": "Du hör att det inte bara är Mist-nin – även en röst från Konoha talar med dem. En förrädare inom din egen by.",
+    "choices": []
+  },
+  {
+    "id": "val3C",
+    "title": "Val 3C: Avslöja dig. Tala med dem.",
+    "description": "Du kliver fram ur mörkret. En av dem lyfter masken – din gamla ANBU-bror. 'Tristan... du borde inte vara här.'",
+    "choices": []
+  }
+]

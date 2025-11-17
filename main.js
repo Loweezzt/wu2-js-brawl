@@ -1,6 +1,13 @@
-const playerName = "Loweezzt"
-let playerHp = 100
-let enemyHp = 100
+let playerHp = 40
+let enemyHp = 40
+class Player {
+    constructor(name, hp) {
+        this.name = name
+        this.hp = hp
+    }
+}
+const enemy = new Player("Goblin", 40)
+let round
 
 function rollDice() {
     return Math.ceil(Math.random() * 6)
@@ -9,6 +16,7 @@ function rollDice() {
 console.log(rollDice())
 
 const playButton = document.querySelector("#play-button")
+const stopButton = document.querySelector("#stop-button")
 const playerHpElement = document.querySelector("#player-hp")
 const enemyHpElement = document.querySelector("#enemy-hp")
 const combatLogElement = document.querySelector("#combat-log")
@@ -46,5 +54,23 @@ function gameRound() {
     playerHpElement.textContent = playerHp
     enemyHpElement.textContent = enemyHp
 }
-playButton.addEventListener("click", gameRound)
+let start = 0
+
+function gameLoop(timestamp) {
+    start = timestamp - start;
+    console.log(timestamp, start)
+    if (start / 1000 > 1) {
+        gameRound()
+        start = 0
+    }
+    round = window.requestAnimationFrame(gameLoop)
+}
+
+function stop() {
+    console.log("stop")
+    window.cancelAnimationFrame(round)
+}
+playButton.addEventListener("click", gameLoop)
+stopButton.addEventListener("click", stop)
+
 

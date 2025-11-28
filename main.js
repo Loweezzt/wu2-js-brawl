@@ -1,12 +1,12 @@
-let playerHp = 40
-let enemyHp = 40
+let playerHp = 20   
+let enemyHp = 20
 class Player {
     constructor(name, hp) {
         this.name = name
         this.hp = hp
     }
 }
-const enemy = new Player("Goblin", 40)
+const enemy = new Player("Goblin", 20)
 let round
 
 function rollDice() {
@@ -33,9 +33,13 @@ function log(msg) {
 function gameRound() {
     if (playerHp <= 0) {
         log("Du är död! Spelet är slut.")
+        stop()
+        return;
 
     } else if (enemyHp <= 0) {
         log("Fienden är död! Du vinner!")
+        stop()
+        return;
     }
     const playerRoll = rollDice()
     const enemyRoll = rollDice()
@@ -57,9 +61,9 @@ function gameRound() {
 let start = 0
 
 function gameLoop(timestamp) {
-    start = timestamp - start;
+if (start === 0) start = timestamp
     console.log(timestamp, start)
-    if (start / 1000 > 1) {
+    if ((timestamp - start) / 1000 > 1) {
         gameRound()
         start = 0
     }
@@ -70,7 +74,9 @@ function stop() {
     console.log("stop")
     window.cancelAnimationFrame(round)
 }
-playButton.addEventListener("click", gameLoop)
+playButton.addEventListener("click", () => {
+    round = requestAnimationFrame(gameLoop)
+})
 stopButton.addEventListener("click", stop)
 
 
